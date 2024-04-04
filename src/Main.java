@@ -25,5 +25,32 @@ public class Main {
         Integer cantidadAutosIngresados = 0;
         Integer cantidadAutosPocoUso = 0;
         Integer cantidadAutosNoAntiguos = 0;
+        Integer sumaAniosNoAntiguos = 0;
+
+        if (antiguedad <= 20) {
+            sumaAniosNoAntiguos += antiguedad;
+        }
+
+        while (antiguedad != 0) {
+            cantidadAutosIngresados += 1;
+
+            if (antiguedad >= 1 && antiguedad <= 5) {
+                cantidadAutosNoAntiguos += 1;
+                System.out.println("NUEVO");
+            }
+            if (antiguedad >= 6 && antiguedad <= 10) {
+                cantidadAutosPocoUso += 1;
+                cantidadAutosNoAntiguos += 1;
+                System.out.println("POCO USO");
+            }
+
+            if (antiguedad >= 11 && antiguedad <= 20) {
+                cantidadAutosNoAntiguos += 1;
+                System.out.println("MUCHO USO");
+            }
+            if (antiguedad > 20) {
+                System.out.println("ANTIGUO");
+            }
+        }
     }
 }
