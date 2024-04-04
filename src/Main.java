@@ -26,9 +26,11 @@ public class Main {
         Integer cantidadAutosPocoUso = 0;
         Integer cantidadAutosNoAntiguos = 0;
         Integer sumaAniosNoAntiguos = 0;
+        Double promedioNoAntiguos = (double) (sumaAniosNoAntiguos/cantidadAutosNoAntiguos);
 
         if (antiguedad <= 20) {
             sumaAniosNoAntiguos += antiguedad;
+
         }
 
         while (antiguedad != 0) {
