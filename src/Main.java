@@ -28,12 +28,6 @@ public class Main {
         Integer cantidadAutosNoAntiguos = 0;
         Integer sumaAniosNoAntiguos = 0;
 
-
-        if (antiguedad <= 20) {
-            sumaAniosNoAntiguos += antiguedad;
-            cantidadAutosNoAntiguos += 1;
-        }
-
         while (antiguedad != 0) {
             cantidadAutosIngresados += 1;
 
@@ -50,14 +44,23 @@ public class Main {
             if (antiguedad > 20) {
                 System.out.println("ANTIGUO");
             }
+            if (antiguedad <= 20) {
+                sumaAniosNoAntiguos += antiguedad;
+                cantidadAutosNoAntiguos += 1;
+            }
             System.out.println("Ingrese la antiguedad de otro vehiculo...");
             antiguedad = input.nextInt();
         }
-        Double promedioNoAntiguos = (double) (sumaAniosNoAntiguos/cantidadAutosNoAntiguos);
+
+        Double promedioNoAntiguos = null;
+
+        if (cantidadAutosNoAntiguos != 0) {
+            promedioNoAntiguos = (double) (sumaAniosNoAntiguos / cantidadAutosNoAntiguos);
+        }
 
         // STOUT
         System.out.println("Cantidad TOTAL DE AUTOS: " + cantidadAutosIngresados);
         System.out.println("Cantidad de AUTOS POCO USO: " + cantidadAutosPocoUso);
-        System.out.println("Promedio de antigüedad AUTOS NO MUY ANTIGUOS: " + cantidadAutosIngresados);
+        System.out.println("Promedio de antigüedad AUTOS NO MUY ANTIGUOS: " + promedioNoAntiguos);
     }
 }
