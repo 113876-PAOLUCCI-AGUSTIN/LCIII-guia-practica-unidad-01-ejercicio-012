@@ -13,8 +13,17 @@
  *
  */
 
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
-        
+
+        // STDIN
+        Scanner input = new Scanner(System.in);
+        Integer antiguedad = input.nextInt();
+
+        Integer cantidadAutosIngresados = 0;
+        Integer cantidadAutosPocoUso = 0;
+        Integer cantidadAutosNoAntiguos = 0;
     }
 }
